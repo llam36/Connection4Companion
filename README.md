@@ -1,38 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project 2 - Animal Training App
+
+## Description
+For this project, you will create an animal training management app! Your job for the app, is to build out backend functionality to manage different users, animals, and training logs. Schemas for these data models can be found in `Schemas.md`
 
 ## Getting Started
+- Fork this repository into your own account
+- Install the Dependencies: `npm install`
+- create a `.env.local` file in the root for your environment variables
+- Start the HTTP server: `npm run dev`
+- Navigate to `localhost:3000/`
 
-First, run the development server:
+## Level 0: Setup
+- (0) Setup a MongoDB database
+- (1) Create a GET endpoint at `/api/health` to test whether your API server is functioning and healthy
+    - This can return a JSON with `{"healthy": true}`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Level 1: Easy
+- (2) Create a POST endpoint at `/api/user` to create a user in the database based on information passed into the body
+- (3) Create a POST endpoint at `/api/animal` to create an animal in the database based on information passed into the body
+- (4) Create a POST endpoint at `/api/training` to create a training log in the database based on information passed into the body
+- Note these requests will have a similar request body and response statuses:
+    - Body: A JSON containing the user/animal/training log information for the user/animal/training log we want to create
+    - Response:
+        - **Status 200 (Success):** If the body contains all of the information and is able to create the user/animal/training log
+        - **Status 400:** If the body contains incorrect information
+        - **Status 500:** For any other errors that occur
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Level 2: Medium
+- (5) In the training log creation endpoint (3), we want to add in a check to ensure that the animal specified in the training log belongs to the user specified in the training log. Add in code to do this.
+    - Response:
+        - **Status 400:** If the training log animal is not owned by specified user
+- We want to add admin functionality to this backend API to allow the admins to view all the data in the database
+    - (6) Create a GET endpoint at `/api/admin/users` which will return all of the users in the database (not with their passwords)
+    - (7) Create a GET endpoint at `/api/admin/animals` which will return all of the animals in the database
+    - (8) Create a GET endpoint at `/api/admin/training` which will return all of the training logs in the database
+    - Response:
+        - **Status 200 (Success):** If we are able to retrieve the users/animals/training logs
+        - **Status 500**: For any other errors
+    - **Note:** These endpoints must implement pagination -- ideally using the document IDs or some other property that has natural ordering (i.e. take a look at approach 2 in this [article](https://www.codementor.io/@arpitbhayani/fast-and-efficient-pagination-in-mongodb-9095flbqr))
+- (9) We want to create a resuable middleware function that takes in an `allowedMethods` array of strings i.e. `['POST', 'GET', 'DELETE']` and a `method` string with the current method being used in the request. This function should check if `method` is in `allowedMethods`
+	- Response
+		- **Status 400**: If the request `method` is not is not in `allowedMethods`
+		- **return NextResponse.next()** - let the request through
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Level 3: Hard
+- (10) We want to add user authentication. In the user creation endpoint (1), add code that allows a password to be accepted. Encrypt this password using an encryption library (we reccommend using [bcrypt](https://www.npmjs.com/package/bcrypt)) and save it in the database under the user's password field
+- (11) Create a POST endpoint at `/api/user/login` that accepts an email and password and tests whether the password is valid for the given email.
+    - Response:
+        - **Status 200 (Success):** If the email/password combo is valid
+        - **Status 403**: If the email password combo is invalid
+- (12) We are going to make our application even more secure by adding JSON Web Token (JWT) functionality to secure our endpoints. Create a POST endpoint at `/api/user/verify` that issues a JSON Web Token to the user if they issue the correct email/password combination.
+    - Response:
+        - **Status 200 (Success):** If the email/password combo is valid + issue a JWT that includes the entirety of their profile information
+        - **Status 403**: If the email password combo is invalid
+- (13) In each of our endpoints, verify the JWT and only allow execution of the endpoint if the JWT is not expired and is valid 
+- (14) Because the JWT includes information about the user making the request, refactor your endpoints to draw information from the JWT rather than the body of the request
+    - i.e. we no longer need to manually specifiy a user id when creating a service animal beacuse we can pull from the info encoded into the JWT.
