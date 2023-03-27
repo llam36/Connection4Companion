@@ -3,6 +3,10 @@
 ## Description
 For this project, you will create an animal training management app! Your job for the app, is to build out backend functionality to manage different users, animals, and training logs. Schemas for these data models can be found in `Schemas.md`
 
+## Submission
+- Create a less than 3 minute video walkthrough of your API
+- **Due: 3/13/2023**
+
 ## Getting Started
 - Fork this repository into your own account
 - Install the Dependencies: `npm install`
@@ -40,11 +44,11 @@ For this project, you will create an animal training management app! Your job fo
     - **Note:** These endpoints must implement pagination -- ideally using the document IDs or some other property that has natural ordering (i.e. take a look at approach 2 in this [article](https://www.codementor.io/@arpitbhayani/fast-and-efficient-pagination-in-mongodb-9095flbqr))
 - (9) We want to create a resuable middleware function that takes in an `allowedMethods` array of strings i.e. `['POST', 'GET', 'DELETE']` and a `method` string with the current method being used in the request. This function should check if `method` is in `allowedMethods`
 	- Response
-		- **Status 400**: If the request `method` is not is not in `allowedMethods`
+		- **Status 400**: If the request `method` is not in `allowedMethods`
 		- **return NextResponse.next()** - let the request through
 
 ## Level 3: Hard
-- (10) We want to add user authentication. In the user creation endpoint (1), add code that allows a password to be accepted. Encrypt this password using an encryption library (we reccommend using [bcrypt](https://www.npmjs.com/package/bcrypt)) and save it in the database under the user's password field
+- (10) We want to add user authentication. In the user creation endpoint (1), add code that allows a password to be accepted. Encrypt this password using an encryption library (we recommend using [bcrypt](https://www.npmjs.com/package/bcrypt)) and save it in the database under the user's password field
 - (11) Create a POST endpoint at `/api/user/login` that accepts an email and password and tests whether the password is valid for the given email.
     - Response:
         - **Status 200 (Success):** If the email/password combo is valid
