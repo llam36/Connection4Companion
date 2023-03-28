@@ -4,7 +4,7 @@
 For this project, you will create an animal training management app! Your job for the app, is to build out backend functionality to manage different users, animals, and training logs. Schemas for these data models can be found in `Schemas.md`
 
 ## Submission
-- Create a less than 3 minute video walkthrough of your API
+- Present your final project during lecture on 3/13/2023
 - **Due: 3/13/2023**
 
 ## Getting Started
@@ -13,6 +13,7 @@ For this project, you will create an animal training management app! Your job fo
 - create a `.env.local` file in the root for your environment variables
 - Start the HTTP server: `npm run dev`
 - Navigate to `localhost:3000/`
+- To test your API we recommend using [Postman](https://www.postman.com)
 
 ## Level 0: Setup
 - (0) Setup a MongoDB database
@@ -60,3 +61,6 @@ For this project, you will create an animal training management app! Your job fo
 - (13) In each of our endpoints, verify the JWT and only allow execution of the endpoint if the JWT is not expired and is valid 
 - (14) Because the JWT includes information about the user making the request, refactor your endpoints to draw information from the JWT rather than the body of the request
     - i.e. we no longer need to manually specifiy a user id when creating a service animal beacuse we can pull from the info encoded into the JWT.
+    
+## Level 4: Above and Beyond
+- Create a frontend for the application using React. Add styling, components, pagination UI, search boxes, etc.
