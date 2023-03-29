@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export default async function connectDB() {
+export async function connectDB() {
     if (mongoose.connections[0].readyState) return;
 
     await mongoose
@@ -14,7 +14,7 @@ export default async function connectDB() {
     console.log("Sucessfully connected to the database!");
 };
 
-export default async function closeDB() {
+export async function closeDB() {
     await mongoose.connection.close();
     console.log("Connection Closed.");
 };
