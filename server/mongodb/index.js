@@ -11,4 +11,10 @@ export default async function connectDB() {
             console.error("Error connecting to database.");
             throw e;
         });
+    console.log("Sucessfully connected to the database!");
+};
+
+export default async function closeDB() {
+    await mongoose.connection.close();
+    console.log("Connection Closed.");
 };
