@@ -20,11 +20,13 @@ const trainingLogSchema = new mongoose.Schema({
     },
     animal: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true
+        required: true,
+        ref: 'Animal'
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true
+        required: true,
+        ref: 'User'
     },
     trainingLogVideo: {
         type: String,
