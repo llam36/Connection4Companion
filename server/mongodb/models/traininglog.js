@@ -2,13 +2,10 @@ import mongoose from "mongoose"
 
 
 const trainingLogSchema = new mongoose.Schema({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
-    },
     date: {
         type: Date,
-        required: true
+        required: false,
+        default: Date.now()
     },
     description: {
         type: String,
@@ -20,12 +17,12 @@ const trainingLogSchema = new mongoose.Schema({
     },
     animal: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        required: false,
         ref: 'Animal'
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        required: false,
         ref: 'User'
     },
     trainingLogVideo: {

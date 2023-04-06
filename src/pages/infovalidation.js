@@ -28,9 +28,9 @@ function animalChecker(data) {
     return 1;
 }
 
-function trainingLogChecker(data) {
+export function trainingLogChecker(data) {
     if (!hoursChecker(data.hours)) {
-        return "Invalid number of hours entered.";
+        return {success: false, message: "Invalid number of hours entered."};
     }
-    return 1;
+    return { success: true, message: "Passed check successfully" };
 }

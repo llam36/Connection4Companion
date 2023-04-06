@@ -2,10 +2,6 @@ import mongoose from "mongoose"
 
 
 const animalSchema = new mongoose.Schema({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
-    },
     name: {
         type: String,
         required: true
