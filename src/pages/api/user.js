@@ -1,13 +1,11 @@
 import mongoose from "mongoose";
-<<<<<<< HEAD
-import User from "../../server/mongodb/models/user.js";
-=======
+import User from "server/mongodb/models/user.js";
 import { connectDB } from "../../../server/mongodb";
->>>>>>> 7cc927fd92c80d4a5f0d114c5d5e11d4bb5bdfb2
 
 export default function handler(req, res) {
   const requestMethod = req.method;
-  const body = res.body;
+  const body = req.body;
+  console.log(body.userData);
   connectDB();
 
   switch (requestMethod) {
