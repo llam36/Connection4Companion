@@ -1,9 +1,11 @@
-/** 
+
 import User from "../../../../server/mongodb/models/user";
 
 export default async function handler(req, res) {
     let data = response.data;
-    let list = getEntries(data.)
+    if (data.offset != 0) {
+        
+    }
 }
 
 async function getEntries(page_size, last_id) {
@@ -22,4 +24,3 @@ async function getEntries(page_size, last_id) {
     });
     return data;
 }
-*/

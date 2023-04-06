@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import User from "../../server/mongodb/models/exampleModel.js";
+import User from "../../server/mongodb/models/user.js";
 
 export default function handler(req, res) {
   const requestMethod = req.method;
