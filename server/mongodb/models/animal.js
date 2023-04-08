@@ -2,10 +2,6 @@ import mongoose from "mongoose"
 
 
 const animalSchema = new mongoose.Schema({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
-    },
     name: {
         type: String,
         required: true
@@ -16,7 +12,8 @@ const animalSchema = new mongoose.Schema({
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true
+        required: true,
+        ref: 'User'
     },
     dateOfBirth: {
         type: Date,
