@@ -17,7 +17,6 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        default: "temppassword"
     },
     profilePicture: {
         type: String,

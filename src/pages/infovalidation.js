@@ -1,3 +1,7 @@
+import { connectDB } from "../../server/mongodb";
+import Animal from "server/mongodb/models/animal";
+import mongoose from "mongoose";
+
 function nameChecker(name) {
     return /^[a-zA-Z]+$/.test(name);
 }
@@ -10,27 +14,34 @@ function hoursChecker(numHours) {
     return numHours >= 0;
 }
 
-function userChecker(data) {
+export function userChecker(data) {
     if (!nameChecker(data.firstName) || !nameChecker(data.lastName)) {
-        return "Name contains invalid characters.";
+        return {success: false, message: "Name contains invalid characters."};
     } else if (!emailChecker(data.email)) {
-        return "Invalid email address.";
+        return {success: false, message: "Invalid email address."};
     }
-    return 1;
+    return { success: true, message: "Passed check successfully" };
 }
 
-function animalChecker(data) {
+export function animalChecker(data) {
     if (!nameChecker(data.name)) {
-        return "Name contains invalid characters.";
+        return {success: false, message: "Name contains invalid characters."};;
     } else if (!hoursChecker(data.hoursTrained)) {
-        return "Invalid number of hours entered.";
+        return {success : false, message : "Invalid number of hours entered."};
     }
-    return 1;
+    return {success : true, message : "Passed check successfully"};
 }
 
-export function trainingLogChecker(data) {
+export async function trainingLogChecker(data) {
     if (!hoursChecker(data.hours)) {
         return {success: false, message: "Invalid number of hours entered."};
+    }
+    connectDB();
+    let animal = await Animal.findById(data.animal);
+    if (animal == null) {
+        return {success: false, message: "Given animal does not exist."};
+    } else if (animal.owner != data.user) {
+        return {success: false, message: "Given animal not owned by given user."};
     }
     return { success: true, message: "Passed check successfully" };
 }

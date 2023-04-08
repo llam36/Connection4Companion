@@ -4,7 +4,7 @@ import mongoose from "mongoose"
 const trainingLogSchema = new mongoose.Schema({
     date: {
         type: Date,
-        required: false,
+        required: true,
         default: Date.now()
     },
     description: {
@@ -17,12 +17,12 @@ const trainingLogSchema = new mongoose.Schema({
     },
     animal: {
         type: mongoose.Schema.Types.ObjectId,
-        required: false,
+        required: true,
         ref: 'Animal'
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        required: false,
+        required: true,
         ref: 'User'
     },
     trainingLogVideo: {
