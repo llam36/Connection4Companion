@@ -45,3 +45,13 @@ Content-Type: application/json
     "email": "1234@gmail.com",
     "password": "1434"
 }
+
+###
+
+POST http://localhost:3000/api/user/verify
+Content-Type: application/json
+
+{
+    "email": "1234@gmail.com",
+    "password": "1434"
+}
