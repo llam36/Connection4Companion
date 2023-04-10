@@ -1,4 +1,4 @@
-import { connectDB, closeDB } from "../../server/mongodb";
+import { connectDB } from "../../server/mongodb";
 import Animal from "server/mongodb/models/animal";
 import User from "server/mongodb/models/user";
 

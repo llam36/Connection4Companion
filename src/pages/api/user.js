@@ -1,6 +1,7 @@
 import User from "server/mongodb/models/user.js";
 import { connectDB, closeDB } from "../../../server/mongodb";
 import { userChecker } from "../infovalidation";
+import bcrypt from "bcrypt";
 
 export default async function handler(req, res) {
   const requestMethod = req.method;
@@ -14,6 +15,7 @@ export default async function handler(req, res) {
         return res.status(400).json({ success: false, message: checker.message });
       }
       try {
+        body.password = await encryptPassword(body.password);
         const newUser = new User(body);
         newUser.save();
         return res.status(200).json({ success: true, message: "Successfully added User to DB" });
@@ -22,8 +24,12 @@ export default async function handler(req, res) {
           return res.status(400).json({ success: false, message: "Invalid data." });
         }
         return res.status(500).json({ success: false, message: e.message });
-      } finally {
-        await closeDB();
       }
   }
+}
+
+const encryptPassword = async (password) => {
+  const salt = await bcrypt.genSalt(10);
+  const hash = await bcrypt.hash(password, salt);
+  return hash;
 }

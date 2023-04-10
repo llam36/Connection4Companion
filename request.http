@@ -9,7 +9,7 @@ Content-Type: application/json
     "firstName": "Long",
     "lastName": "Lam",
     "email": "1234@gmail.com",
-    "password": "1234"
+    "password": "1434"
 }
 
 ###
@@ -20,7 +20,7 @@ Content-Type: application/json
 {
     "name": "Dog",
     "hoursTrained": 10,
-    "owner": "643351241c4c8f77e038177f"
+    "owner": "6433915eed7e080047436d0d"
 }
 
 ###
@@ -32,6 +32,6 @@ Content-Type: application/json
     "date": "1975-08-19T23:15:30.000Z",
     "description": "log1",
     "hours": 10,
-    "animal": "6433543d1c4c8f77e0381783",
-    "user": "643351241c4c8f77e038177f"
+    "animal": "6433919ded7e080047436d0f",
+    "user": "6433915eed7e080047436d0d"
 }

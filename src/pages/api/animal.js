@@ -21,8 +21,6 @@ export default async function handler(req, res) {
                     return res.status(400).json({ success: false, message: "Invalid data." });
                 }
                 return res.status(500).json({ success: false, message: e.message })
-            } finally {
-                await closeDB();
             }
     }
 }
