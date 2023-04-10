@@ -1,0 +1,37 @@
+GET http://localhost:3000/api/health
+
+###
+
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "firstName": "Long",
+    "lastName": "Lam",
+    "email": "1234@gmail.com",
+    "password": "1234"
+}
+
+###
+
+POST http://localhost:3000/api/animal
+Content-Type: application/json
+
+{
+    "name": "Dog",
+    "hoursTrained": 10,
+    "owner": "643351241c4c8f77e038177f"
+}
+
+###
+
+POST http://localhost:3000/api/training
+Content-Type: application/json
+
+{
+    "date": "1975-08-19T23:15:30.000Z",
+    "description": "log1",
+    "hours": 10,
+    "animal": "6433543d1c4c8f77e0381783",
+    "user": "643351241c4c8f77e038177f"
+}

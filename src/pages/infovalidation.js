@@ -1,6 +1,6 @@
-import { connectDB } from "../../server/mongodb";
+import { connectDB, closeDB } from "../../server/mongodb";
 import Animal from "server/mongodb/models/animal";
-import mongoose from "mongoose";
+import User from "server/mongodb/models/user";
 
 function nameChecker(name) {
     return /^[a-zA-Z]+$/.test(name);
@@ -36,12 +36,17 @@ export async function trainingLogChecker(data) {
     if (!hoursChecker(data.hours)) {
         return {success: false, message: "Invalid number of hours entered."};
     }
-    connectDB();
-    let animal = await Animal.findById(data.animal);
-    if (animal == null) {
-        return {success: false, message: "Given animal does not exist."};
-    } else if (animal.owner != data.user) {
-        return {success: false, message: "Given animal not owned by given user."};
+    await connectDB();
+    try {
+        let animal = await Animal.findById(data.animal);
+        let user = await User.findById(data.user);
+        if (animal == null || user == null) {
+            return { success: false, message: "Given animal or user does not exist in DB" };
+        } else if (!animal.owner.equals(data.user)) {
+            return { success: false, message: "Given animal not owned by given user" };
+        }
+        return { success: true, message: "Passed check successfully" };
+    } catch(e) {
+        return { success: false, message: e.message };
     }
-    return { success: true, message: "Passed check successfully" };
 }
