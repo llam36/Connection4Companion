@@ -1,5 +1,5 @@
 import TrainingLog from "server/mongodb/models/traininglog.js"
-import { connectDB, closeDB } from "../../../server/mongodb";
+import { connectDB } from "../../../server/mongodb";
 import { trainingLogChecker } from "../infovalidation";
 
 

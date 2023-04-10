@@ -35,3 +35,13 @@ Content-Type: application/json
     "animal": "6433919ded7e080047436d0f",
     "user": "6433915eed7e080047436d0d"
 }
+
+###
+
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+    "email": "1234@gmail.com",
+    "password": "1434"
+}

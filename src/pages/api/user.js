@@ -1,5 +1,5 @@
 import User from "server/mongodb/models/user.js";
-import { connectDB, closeDB } from "../../../server/mongodb";
+import { connectDB } from "../../../server/mongodb";
 import { userChecker } from "../infovalidation";
 import bcrypt from "bcrypt";
 

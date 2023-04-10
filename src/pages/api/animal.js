@@ -1,5 +1,5 @@
 import Animal from "server/mongodb/models/animal.js"
-import { connectDB, closeDB } from "../../../server/mongodb";
+import { connectDB } from "../../../server/mongodb";
 import { animalChecker } from "../infovalidation";
 
 export default async function handler(req, res) {
