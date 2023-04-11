@@ -1,5 +1,5 @@
 import { connectDB } from "../../../../server/mongodb";
-import User from "../../../../server/mongodb/models/user";
+import Animal from "../../../../server/mongodb/models/animal";
 
 export default async function handler(req, res) {
     let page = req.query.page;
@@ -7,13 +7,11 @@ export default async function handler(req, res) {
         page = 1;
     }
     await connectDB();
-    let userrecords;
+    let animalrecords;
     try {
-        userrecords = await User.find().skip((page - 1) * 10).limit(10);
+        animalrecords = await Animal.find().skip((page - 1) * 10).limit(10);
     } catch (e) {
         return res.status(500).json({ success: false, message: e.message })
     }
-    userrecords = userrecords.map(({_id, firstName, lastName, email, password, __v}) => ({_id, firstName, lastName, email, __v}));
-    return res.status(200).json(userrecords);
+    return res.status(200).json(animalrecords);
 }
-
