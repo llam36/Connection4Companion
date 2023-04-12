@@ -45,6 +45,11 @@ export async function trainingLogChecker(data) {
         } else if (!animal.owner.equals(data.user)) {
             return { success: false, message: "Given animal not owned by given user" };
         }
+        animal.hoursTrained += data.hours;
+        console.log(data)
+        let newHours = {hoursTrained : animal.hoursTrained}
+        console.log(newHours)
+        await Animal.findByIdAndUpdate(data.animal, newHours);
         return { success: true, message: "Passed check successfully" };
     } catch(e) {
         return { success: false, message: e.message };
