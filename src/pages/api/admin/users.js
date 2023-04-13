@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     } catch (e) {
         return res.status(500).json({ success: false, message: e.message })
     }
-    userrecords = userrecords.map(({_id, firstName, lastName, email, password, __v}) => ({_id, firstName, lastName, email, __v}));
+    userrecords = userrecords.map(({_id, firstName, lastName, email, password, __v}) => ({firstName, lastName, email}));
     return res.status(200).json(userrecords);
 }
 
