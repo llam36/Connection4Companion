@@ -10,6 +10,9 @@ export default function Home() {
 
     return (
         <div>
+          <Head>
+            <title>Sign Up Page</title>
+          </Head>
           <center>
           <h1> Create your account: </h1>
           <RegistrationForm />
