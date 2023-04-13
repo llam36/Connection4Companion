@@ -15,7 +15,7 @@ function RegistrationForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    console.log(formData.firstName);
     // Do something with the form data, such as send it to a server
   };
 

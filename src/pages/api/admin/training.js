@@ -1,5 +1,5 @@
 import { connectDB } from "../../../../server/mongodb";
-import TrainingLog from "../../../../server/mongodb/models/animal";
+import TrainingLog from "../../../../server/mongodb/models/traininglog";
 
 export default async function handler(req, res) {
     let page = req.query.page;
@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     await connectDB();
     let trainingrecords;
     try {
-        trainingrecords = await TrainingLog.find().skip((page - 1) * 10).limit(10);
+        trainingrecords = await TrainingLog.find().populate({path : 'animal'}).populate({path : 'user'}).skip((page - 1) * 10).limit(10);
     } catch (e) {
         return res.status(500).json({ success: false, message: e.message })
     }
