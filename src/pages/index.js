@@ -37,7 +37,7 @@ export default function Home() {
           <p class="card__description">
             Add a new animal to the database.
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <a href="./registerAnimal" class="card__button">Learn More</a>
         </div>
         
         <div class="card">
@@ -45,7 +45,7 @@ export default function Home() {
           <p class="card__description">
             Add a log for a training session between a trainer and an animal.
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <a href="./newTrainingSession" class="card__button">Learn More</a>
         </div>
         <div class="card">
           <h2 class="card__title">View All Users*</h2>

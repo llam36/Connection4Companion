@@ -9,6 +9,21 @@ export default function logIn() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(`Email: ${email}, Password: ${password}`);
+
+        const body = {
+          email: email,
+          password: password,
+        };
+    
+    
+        try{
+            const res = axios.post("/api/user/verify", body);
+            console.log(res);
+            setSignedIn(true);
+        } catch (e) {
+            console.log(e);
+        }
+
     };
 
     return (
