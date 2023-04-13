@@ -4,12 +4,16 @@ import { animalChecker } from "../infovalidation";
 import { verifyJWT } from "./user/verify";
 
 export default async function handler(req, res) {
+    let jwt = null;
     try {
         const decodedJWT = verifyJWT(req);
+        jwt = decodedJWT;
     } catch (e) {
         return res.status(400).json({ success: false, message: e.message });
     }
-    let data = req.body;
+    var data = req.body;
+    data.user = jwt.user.id.toString();
+    console.log(jwt.user.id);
     await connectDB();
 
     switch (req.method) {

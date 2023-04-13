@@ -4,12 +4,15 @@ import { trainingLogChecker } from "../infovalidation";
 import { verifyJWT } from "./user/verify";
 
 export default async function handler(req, res) {
+    let jwt = null;
     try {
         const decodedJWT = verifyJWT(req);
+        jwt = decodedJWT;
     } catch (e) {
         return res.status(400).json({ success: false, message: e.message });
     }
     let data = req.body;
+    data.owner = jwt.user.id.toString();
     await connectDB();
 
     switch (req.method) {

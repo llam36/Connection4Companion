@@ -16,26 +16,26 @@ Content-Type: application/json
 
 POST http://localhost:3000/api/animal
 Content-Type: application/json
-Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjM0MTcsImV4cCI6MTY4MTQyMzcxN30.LfAh9k1NpOd1BFdWOqVFKIp7oTGGxJORDg8Snz-21JY; Max-Age=60; HttpOnly; SameSite=Strict
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQzMzkxNWVlZDdlMDgwMDQ3NDM2ZDBkIiwiZmlyc3ROYW1lIjoiTG9uZyIsImxhc3ROYW1lIjoiTGFtIn0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjY0NTcsImV4cCI6MTY4MTQyNjc1N30.nw0ujLj2rBCna8nQRQ3nIgqHK-h3EEAsfr0YcOh6etA; Max-Age=60; HttpOnly; SameSite=Strict
 
 {
     "name": "Dog",
-    "hoursTrained": 10,
-    "owner": "6433915eed7e080047436d0d"
+    "hoursTrained": 10
+    //"owner": "6433915eed7e080047436d0d"
 }
 
 ###
 
 POST http://localhost:3000/api/training
 Content-Type: application/json
-Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjM0MTcsImV4cCI6MTY4MTQyMzcxN30.LfAh9k1NpOd1BFdWOqVFKIp7oTGGxJORDg8Snz-21JY; Max-Age=60; HttpOnly; SameSite=Strict
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQzMzkxNWVlZDdlMDgwMDQ3NDM2ZDBkIiwiZmlyc3ROYW1lIjoiTG9uZyIsImxhc3ROYW1lIjoiTGFtIn0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjY0NTcsImV4cCI6MTY4MTQyNjc1N30.nw0ujLj2rBCna8nQRQ3nIgqHK-h3EEAsfr0YcOh6etA; Max-Age=60; HttpOnly; SameSite=Strict
 
 {
     "date": "1975-08-19T23:15:30.000Z",
     "description": "log1",
     "hours": 10,
-    "animal": "6433919ded7e080047436d0f",
-    "user": "6433915eed7e080047436d0d"
+    "animal": "6433919ded7e080047436d0f"
+    //"user": "6433915eed7e080047436d0d"
 }
 
 ###
@@ -62,13 +62,13 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/admin/animals
-Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjM0MTcsImV4cCI6MTY4MTQyMzcxN30.LfAh9k1NpOd1BFdWOqVFKIp7oTGGxJORDg8Snz-21JY; Max-Age=60; HttpOnly; SameSite=Strict
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQzMzkxNWVlZDdlMDgwMDQ3NDM2ZDBkIiwiZmlyc3ROYW1lIjoiTG9uZyIsImxhc3ROYW1lIjoiTGFtIn0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjY0NTcsImV4cCI6MTY4MTQyNjc1N30.nw0ujLj2rBCna8nQRQ3nIgqHK-h3EEAsfr0YcOh6etA; Max-Age=60; HttpOnly; SameSite=Strict
 
 ###
 GET http://localhost:3000/api/admin/training
-Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjM0MTcsImV4cCI6MTY4MTQyMzcxN30.LfAh9k1NpOd1BFdWOqVFKIp7oTGGxJORDg8Snz-21JY; Max-Age=60; HttpOnly; SameSite=Strict
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQzMzkxNWVlZDdlMDgwMDQ3NDM2ZDBkIiwiZmlyc3ROYW1lIjoiTG9uZyIsImxhc3ROYW1lIjoiTGFtIn0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjY0NTcsImV4cCI6MTY4MTQyNjc1N30.nw0ujLj2rBCna8nQRQ3nIgqHK-h3EEAsfr0YcOh6etA; Max-Age=60; HttpOnly; SameSite=Strict
 
 ###
 
 GET http://localhost:3000/api/admin/users
-Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjM0MTcsImV4cCI6MTY4MTQyMzcxN30.LfAh9k1NpOd1BFdWOqVFKIp7oTGGxJORDg8Snz-21JY; Max-Age=60; HttpOnly; SameSite=Strict
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQzMzkxNWVlZDdlMDgwMDQ3NDM2ZDBkIiwiZmlyc3ROYW1lIjoiTG9uZyIsImxhc3ROYW1lIjoiTGFtIn0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjY0NTcsImV4cCI6MTY4MTQyNjc1N30.nw0ujLj2rBCna8nQRQ3nIgqHK-h3EEAsfr0YcOh6etA; Max-Age=60; HttpOnly; SameSite=Strict

@@ -5,6 +5,9 @@ import { verifyJWT } from "../user/verify";
 export default async function handler(req, res) {
     try {
         const decodedJWT = verifyJWT(req);
+        if (!decodedJWT.admin) {
+            return res.status(400).json({ success: false, message: "User does not have admin permission" });
+        }
     } catch (e) {
         return res.status(400).json({ success: false, message: e.message });
     }
