@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'; 
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -16,7 +17,23 @@ function RegistrationForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
-    // Do something with the form data, such as send it to a server
+
+    const body = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      password: formData.password,
+    };
+
+
+    try{
+        const res = axios.post("/api/user", body);
+        console.log(res);
+    } catch (e) {
+        console.log(e);
+    }
+
+
   };
 
   return (
