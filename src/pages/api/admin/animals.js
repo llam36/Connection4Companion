@@ -19,11 +19,13 @@ export default async function handler(req, res) {
     await connectDB();
     let animalrecords;
     try {
-        animalrecords = await Animal.find().populate({ path: 'owner' }).skip((page - 1) * 10).limit(10);
+
+        animalrecords = await Animal.find().populate({path : 'owner'}).skip((page - 1) * 3).limit(3);
     } catch (e) {
         return res.status(500).json({ success: false, message: e.message })
     }
-    animalrecords = animalrecords.map(({ _id, name, hoursTrained, owner, dateOfBirth, __v }) => ({ name, hoursTrained, owner, dateOfBirth }));
+    animalrecords = animalrecords.map(({_id, name, hoursTrained, owner, dateOfBirth, __v}) => ({name, hoursTrained, owner, dateOfBirth}));
+
     let ownerName = await User.findById(animalrecords.owner);
     return res.status(200).json(animalrecords);
 }

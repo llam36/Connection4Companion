@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 //import styles from '@/styles/Home.module.css'
@@ -11,16 +12,22 @@ export default function Home() {
     return (
         <div>
           <Head>
-            <title>Sign Up Page</title>
+            <title>Sign Up</title>
           </Head>
           <center>
-          <h1> Create your account: </h1>
+          <div class="topbar">
+                <div class="topbar__logo">
+                  <Link href="/" class="open-links">
+                    Animal Training Portal
+                  </Link>
+                </div>
+                <div class="topbar__buttons">
+              <a class="topbar__button" href="./loginPage">Log in</a>
+              </div>
+              </div>
           <RegistrationForm />
           <div>
-            <h2> Already have an account? </h2>
-            <a href="./login" class="card__button"> Login </a>
-            <h2> Back to Home</h2>
-            <a href="./" class="card__button"> Back to Home </a>
+            <h5> Already have an account? <a href="./login"> Login </a></h5>
 
           </div>
           </center>

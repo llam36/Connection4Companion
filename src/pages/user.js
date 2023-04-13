@@ -20,9 +20,9 @@ export default function User() {
                   </Link>
                 </div>
                 <div class="topbar__buttons">
-                  <a class="topbar__button" href="#">
+                  <Link class="topbar__button" href = "./signUpPage">
                     Log in
-                  </a>
+                  </Link>
                 </div>
               </div>
               <RegistrationForm/>
