@@ -17,7 +17,7 @@ export default function Home() {
       <div class="topbar__logo">Animal Training Portal</div>
       <div class="topbar__buttons">
         <a class="topbar__button" href="#">Log in</a>
-        <a class="topbar__button" href="#">Sign up</a>
+        <Link href="/user" class="topbar__button">Sign up</Link>
       </div>
     </div>
     <div class="home">
@@ -49,14 +49,14 @@ export default function Home() {
           <p class="card__description">
             Look through all users in training database. (Admin Only)
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <Link href="/viewUsers" class="card__button">Learn More</Link>
         </div>
         <div class="card">
           <h2 class="card__title">View All Animals*</h2>
           <p class="card__description">
           Look through all animals in training database. (Admin Only)
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <Link href="/viewAnimals" class="card__button">Learn More</Link>
         </div>
         <div class="card">
           <h2 class="card__title">View All Logs*</h2>
