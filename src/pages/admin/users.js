@@ -14,7 +14,7 @@ export default function viewUser() {
     const inp1 = useRef(null)
     const [page, setPage] = useState(1)
     const clicker1 = () => {
-        if (page < data.length) {
+        if (data.length == 5) {
             setPage(page + 1)
         }
         

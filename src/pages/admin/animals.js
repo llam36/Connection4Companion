@@ -56,7 +56,7 @@ export default function viewUser() {
               <div>{data.map(animal => 
               <div class = "user-card">
                 <span class = "card-title">{animal.name}</span><br></br>
-                DOB: {animal.dateOfBirth.substring(0,10)} <br></br>
+                DOB: {animal.dateOfBirth} <br></br>
                 Hours Trained: {animal.hoursTrained}<br></br>
                 Owner: {animal.owner.firstName + " " + animal.owner.lastName} <br></br>
                 Owner Email: {animal.owner.email} <br></br>
