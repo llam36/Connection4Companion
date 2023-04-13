@@ -4,13 +4,14 @@ import { sign } from "jsonwebtoken";
 import { serialize } from "cookie";
 
 export default async function handler(req, res) {
-    const { email, password } = req.body;
-    const result = await login(email, password);
+    const { email, password, admin } = req.body;
+    const result = await login(email, password, admin);
     if (!result.success) {
         return res.status(403).json({ success: result.success, message: result.message });
     }
     //issue JWT
-    const token = sign(result.user, process.env.SECRET, { expiresIn: '300s' });
+    const token = sign({ user: { id: result.user._id, firstName: result.user.firstName, lastName: result.user.lastName }, admin: admin }, process.env.SECRET, { expiresIn: '300s' });
+    console.log(result.user._id);
     const serialized = serialize("UserJWT", token, {
         httpOnly: true,
         secure: false,

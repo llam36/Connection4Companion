@@ -17,8 +17,10 @@ export default function Home() {
     <div class="topbar">
       <div class="topbar__logo">Animal Training Portal</div>
       <div class="topbar__buttons">
+
         <a class="topbar__button" href="./loginPage">Log in</a>
         <a class="topbar__button" href="./signUpPage">Sign up</a>
+
       </div>
     </div>
     <div class="home">
@@ -35,7 +37,7 @@ export default function Home() {
           <p class="card__description">
             Add a new animal to the database.
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <a href="./registerAnimal" class="card__button">Learn More</a>
         </div>
         
         <div class="card">
@@ -43,7 +45,7 @@ export default function Home() {
           <p class="card__description">
             Add a log for a training session between a trainer and an animal.
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <a href="./newTrainingSession" class="card__button">Learn More</a>
         </div>
         <div class="card">
           <h2 class="card__title">View All Users*</h2>
