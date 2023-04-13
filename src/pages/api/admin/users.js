@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     await connectDB();
     let userrecords;
     try {
-        userrecords = await User.find().skip((page - 1) * 10).limit(10);
+        userrecords = await User.find().skip((page - 1) * 5).limit(5);
     } catch (e) {
         return res.status(500).json({ success: false, message: e.message })
     }

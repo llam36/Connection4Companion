@@ -14,6 +14,11 @@ body {
   
 
 }
+
+.list-display {
+  margin: 10px;
+}
+
 .topbar:hover {
   background-color: black;
 }
@@ -38,6 +43,7 @@ body {
 }
 .topbar__button:hover {
   background-color: #f34949;
+  color: white;
 }
 
 .home {
@@ -64,6 +70,16 @@ body {
   justify-content: center;
   gap: 20px;
   max-width: 1200px;
+}
+
+.user-card {
+  background-color: #ffe7e74d;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: calc(50% - 10px);
+  max-width: 500px;
+  margin: 15px;
 }
 
 .card {
@@ -151,3 +167,73 @@ form {
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #f34949;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 3px;
+}
+
+.prev:disabled,
+.next:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #000000;
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    flex-direction: column;
+  }
+  
+  button {
+    margin: 10px 0;
+  }
+}
+
+.card-title {
+  color: red;
+  text-decoration: solid;
+}
+
+.login {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+

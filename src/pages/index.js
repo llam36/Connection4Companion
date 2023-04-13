@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 
 
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -16,8 +17,10 @@ export default function Home() {
     <div class="topbar">
       <div class="topbar__logo">Animal Training Portal</div>
       <div class="topbar__buttons">
+
         <a class="topbar__button" href="./loginPage">Log in</a>
         <a class="topbar__button" href="./signUpPage">Sign up</a>
+
       </div>
     </div>
     <div class="home">
@@ -49,21 +52,21 @@ export default function Home() {
           <p class="card__description">
             Look through all users in training database. (Admin Only)
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <Link href="/admin/users" class="card__button">Learn More</Link>
         </div>
         <div class="card">
           <h2 class="card__title">View All Animals*</h2>
           <p class="card__description">
           Look through all animals in training database. (Admin Only)
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <Link href="/admin/animals" class="card__button">Learn More</Link>
         </div>
         <div class="card">
           <h2 class="card__title">View All Logs*</h2>
           <p class="card__description">
             Look through all training logs in training database. (Admin Only)
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <Link href="/admin/training" class="card__button">Learn More</Link>
         </div>
       </div>
     </div>
