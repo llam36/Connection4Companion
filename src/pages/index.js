@@ -49,21 +49,21 @@ export default function Home() {
           <p class="card__description">
             Look through all users in training database. (Admin Only)
           </p>
-          <Link href="/viewUsers" class="card__button">Learn More</Link>
+          <Link href="/admin/users" class="card__button">Learn More</Link>
         </div>
         <div class="card">
           <h2 class="card__title">View All Animals*</h2>
           <p class="card__description">
           Look through all animals in training database. (Admin Only)
           </p>
-          <Link href="/viewAnimals" class="card__button">Learn More</Link>
+          <Link href="/admin/animals" class="card__button">Learn More</Link>
         </div>
         <div class="card">
           <h2 class="card__title">View All Logs*</h2>
           <p class="card__description">
             Look through all training logs in training database. (Admin Only)
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <Link href="/admin/training" class="card__button">Learn More</Link>
         </div>
       </div>
     </div>

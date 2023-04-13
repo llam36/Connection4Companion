@@ -43,6 +43,7 @@ body {
 }
 .topbar__button:hover {
   background-color: #f34949;
+  color: white;
 }
 
 .home {
@@ -206,4 +207,9 @@ button {
   button {
     margin: 10px 0;
   }
+}
+
+.card-title {
+  color: red;
+  text-decoration: solid;
 }

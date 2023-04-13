@@ -11,10 +11,9 @@ const fetcher = async (url) => {
 }
 
 export default function viewUser() {
-    const inp1 = useRef(null)
     const [page, setPage] = useState(1)
     const clicker1 = () => {
-        if (page < data.length) {
+        if (page < data.length - 1) {
             setPage(page + 1)
         }
         
@@ -25,7 +24,7 @@ export default function viewUser() {
         }
         
     }
-    const { data, error, isLoading, isValidating } = useSWR(`/api/admin/users?page=${page}`, fetcher)
+    const { data, error, isLoading, isValidating } = useSWR(`/api/admin/animals?page=${page}`, fetcher)
     if (isLoading) return <div>Loading</div>
     if (!data) return (
         <>
@@ -53,8 +52,15 @@ export default function viewUser() {
                 </div>
               </div>
               <center>
-                <h5>Page: {page} of {data.length}</h5>
-              <div>{data.map(user => <div class = "user-card">First Name: {user.firstName}<br></br>Last Name: {user.lastName} <br></br>Email: {user.email}<br></br></div>)}</div>
+                <h5>Page: {page}</h5>
+              <div>{data.map(animal => 
+              <div class = "user-card">
+                <span class = "card-title">{animal.name}</span><br></br>
+                DOB: {animal.dateOfBirth.substring(0,10)} <br></br>
+                Hours Trained: {animal.hoursTrained}<br></br>
+                Owner: {animal.owner.firstName + " " + animal.owner.lastName} <br></br>
+                Owner Email: {animal.owner.email} <br></br>
+            </div>)}</div>
               <div class="pagination">
                 <button class="prev" onClick={clicker2}>Prev Page</button>
                 <button class="next" onClick = {clicker1}>Next Page</button>
