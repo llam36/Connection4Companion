@@ -16,6 +16,7 @@ Content-Type: application/json
 
 POST http://localhost:3000/api/animal
 Content-Type: application/json
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjE4NzYsImV4cCI6MTY4MTQyMjE3Nn0.3Jbp8PT6TvkM7y5tSMMU2SLhE6NY3yO1sBPotxH803Q; Max-Age=60; HttpOnly; SameSite=Strict
 
 {
     "name": "Dog",
@@ -43,7 +44,8 @@ Content-Type: application/json
 
 {
     "email": "1234@gmail.com",
-    "password": "1434"
+    "password": "1434",
+    "admin": true
 }
 
 ###
@@ -53,5 +55,19 @@ Content-Type: application/json
 
 {
     "email": "1234@gmail.com",
-    "password": "1434"
+    "password": "1434",
+    "admin": true
 }
+
+###
+GET http://localhost:3000/api/admin/animals
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjI0MTQsImV4cCI6MTY4MTQyMjcxNH0.5JxKK7NxBtBjwWl3REaLWmq4nqqMboTsGJe07wtHZ_8; Max-Age=60; HttpOnly; SameSite=Strict
+
+###
+GET http://localhost:3000/api/admin/training
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjI0MTQsImV4cCI6MTY4MTQyMjcxNH0.5JxKK7NxBtBjwWl3REaLWmq4nqqMboTsGJe07wtHZ_8; Max-Age=60; HttpOnly; SameSite=Strict
+
+###
+
+GET http://localhost:3000/api/admin/users
+Cookie: UserJWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MzM5MTVlZWQ3ZTA4MDA0NzQzNmQwZCIsImZpcnN0TmFtZSI6IkxvbmciLCJsYXN0TmFtZSI6IkxhbSIsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDYXQ1eVhDcWhhb253Tmg0RHNkQTlPZnBKSnBHTTF3bEtYMy5mN2JpL2NDVGpHdVd4N1hjUyIsIl9fdiI6MH0sImFkbWluIjp0cnVlLCJpYXQiOjE2ODE0MjI0MTQsImV4cCI6MTY4MTQyMjcxNH0.5JxKK7NxBtBjwWl3REaLWmq4nqqMboTsGJe07wtHZ_8; Max-Age=60; HttpOnly; SameSite=Strict
