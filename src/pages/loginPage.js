@@ -11,16 +11,19 @@ export default function Home() {
     return (
         <div>
         <Head>
-            <title>Login Page</title>
-          </Head>
+      <title>Login</title>
+    </Head>
+    <div class="topbar">
+      <div class="topbar__logo">Animal Training Portal</div>
+      <div class="topbar__buttons">
+        <a class="topbar__button" href="./loginPage">Log in</a>
+        <a class="topbar__button" href="./signUpPage">Sign up</a>
+      </div>
+    </div>
         <center>
-          <h1> Log in to your account: </h1>
           <RegistrationForm />
           <div>
-            <h2> Don't have an account? </h2>
-            <a href="./signUpPage" class="card__button"> Sign Up </a>
-            <h2> Back to Home</h2>
-            <a href="./" class="card__button"> Back to Home </a>
+            <h5> Don't have an account? <a href="./signUpPage" > Sign Up </a></h5>
           </div>
           </center>
           
