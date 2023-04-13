@@ -3,13 +3,9 @@ import axios from 'axios';
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
     email: '',
     password: '',
   });
-
-  const [isSignedIn, setSignedIn] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -18,20 +14,17 @@ function RegistrationForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData.firstName);
+    console.log(formData);
 
     const body = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
       email: formData.email,
       password: formData.password,
     };
 
 
     try{
-        const res = axios.post("/api/user", body);
+        const res = axios.post("/api/user/login", body);
         console.log(res);
-        setSignedIn(true);
     } catch (e) {
         console.log(e);
     }
@@ -40,31 +33,6 @@ function RegistrationForm() {
   return (
     <form onSubmit={handleSubmit}>
       <center>
-      
-        <div class = "form-group">
-        <label>First Name:</label>
-        <input
-          type="text"
-          name="firstName"
-          value={formData.firstName}
-          class = "input"
-          onChange={handleInputChange}
-        />
-        </div>
-      <br />
-      
-      <div class = "form-group">
-      <label> Last Name:</label>
-        <input
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          class = "input"
-          onChange={handleInputChange}
-        />
-        </div>
-      
-      <br />
       
       <div class = "form-group">
       <label>
@@ -96,10 +64,6 @@ function RegistrationForm() {
 
       <br />
       <button href="/index" type="submit" class = "search">Submit</button>
-
-      <div>
-        {isSignedIn ? <p>Successfully Signed Up </p> : <p> Not Signed Up Yet</p>}
-      </div> 
       </center>
     </form>
   );

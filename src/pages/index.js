@@ -17,8 +17,10 @@ export default function Home() {
     <div class="topbar">
       <div class="topbar__logo">Animal Training Portal</div>
       <div class="topbar__buttons">
-      <Link href="/login" class="topbar__button">Log in</Link>
-        <Link href="/user" class="topbar__button">Sign up</Link>
+
+        <a class="topbar__button" href="./loginPage">Log in</a>
+        <a class="topbar__button" href="./signUpPage">Sign up</a>
+
       </div>
     </div>
     <div class="home">
