@@ -1,8 +1,9 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import RegistrationForm from './createUserPage'
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,7 +27,7 @@ export default function Home() {
           <p class="card__description">
             Add a new animal trainer to the database.
           </p>
-          <a href="#" class="card__button">Learn More</a>
+          <Link href="/user" class="card__button">Learn More</Link>
         </div>
         <div class="card">
           <h2 class="card__title">Register an Animal</h2>

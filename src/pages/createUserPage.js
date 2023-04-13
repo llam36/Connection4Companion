@@ -17,51 +17,69 @@ function RegistrationForm() {
     event.preventDefault();
     console.log(formData.firstName);
     // Do something with the form data, such as send it to a server
+
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        First Name:
+      <center>
+      
+        <div class = "form-group">
+        <label>First Name:</label>
         <input
           type="text"
           name="firstName"
           value={formData.firstName}
+          class = "input"
           onChange={handleInputChange}
         />
-      </label>
+        </div>
       <br />
-      <label>
-        Last Name:
+      
+      <div class = "form-group">
+      <label> Last Name:</label>
         <input
           type="text"
           name="lastName"
           value={formData.lastName}
+          class = "input"
           onChange={handleInputChange}
         />
-      </label>
+        </div>
+      
       <br />
+      
+      <div class = "form-group">
       <label>
-        Email:
+        Email Address:
+        </label>
         <input
           type="email"
           name="email"
           value={formData.email}
+          class = "input"
           onChange={handleInputChange}
         />
-      </label>
+        </div>
+      
       <br />
+      
+      <div class = "form-group">
       <label>
         Password:
+        </label>
         <input
           type="password"
           name="password"
           value={formData.password}
+          class = "input"
           onChange={handleInputChange}
         />
-      </label>
+        </div>
+
       <br />
-      <button type="submit">Submit</button>
+      <button type="submit" class = "search">Submit</button>
+      </center>
     </form>
   );
 }
