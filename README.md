@@ -4,7 +4,7 @@ Connection4Companion is a web application connecting disabled community members 
 The app provides training management service allowing registered users to accessibly log their service animal's training progress and capture memorable moments with uploaded videos. Ultimately, Connection4Companion promotes training documentation and fosters companionship between owners and their best service animal friends.
 
 ## Notice
-Developed at Spring 2023 Bits of Good Developer Bootcamp and individually maintained and upgraded.
+Developed collaboratively at Spring 2023 Bits of Good Developer Bootcamp and individually maintained and upgraded.
 
 ## Tech Stack
 ![CSS](https://img.shields.io/badge/css-a?style=for-the-badge&logo=css3&logoColor=white&color=1572B6)
@@ -21,7 +21,7 @@ git clone https://github.com/llam36/Healing4Heroes.git
 2. Navigate to project directory in terminal
 3. Install dependencies
 ```
-npm i
+npm install
 ```
 4. Run the application in browser
 ```
