@@ -7,9 +7,11 @@ The app provides training management service allowing registered users to access
 Developed at Spring 2023 Bits of Good Developer Bootcamp and individually maintained and upgraded.
 
 ## Tech Stack
-- HTML/CSS: Front end
-- Next.js: Backend + API routing
-- MongoDB: Data storage
+![CSS](https://img.shields.io/badge/css-a?style=for-the-badge&logo=css3&logoColor=white&color=1572B6)
+![HTML](https://img.shields.io/badge/html-a?style=for-the-badge&logo=html5&logoColor=white&color=E34F26)
+![JavaScript](https://img.shields.io/badge/javascript-a?style=for-the-badge&logo=javascript&logoColor=F7DF1E&color=231F40)
+![MongoDB](https://img.shields.io/badge/MongoDB-a?style=for-the-badge&logo=mongodb&logoColor=white&color=47A248)
+![Next.js](https://img.shields.io/badge/next.js-nextdotjs?style=for-the-badge&logo=next.js&logoColor=white&color=000000)
 
 ## Development
 1. Clone this project to your computer
