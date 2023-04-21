@@ -14,9 +14,9 @@ Developed collaboratively at Spring 2023 Bits of Good Developer Bootcamp and ind
 ![Next.js](https://img.shields.io/badge/next.js-nextdotjs?style=for-the-badge&logo=next.js&logoColor=white&color=000000)
 
 ## Tool installation
-1. Node.js
-2. Git
-3. Text editor - VSCode recommended
+![Git](https://img.shields.io/badge/git-a?style=for-the-badge&logo=git&logoColor=white&color=F05032)
+![Node.js](https://img.shields.io/badge/node.js-nodedotjs.svg?style=for-the-badge&logo=node.js&logoColor=white&color=339933)
+![VSCode](https://img.shields.io/badge/vscode-a?style=for-the-badge&logo=visualstudiocode&logoColor=white&color=007ACC)
 
 ## Development
 1. Clone this project to your computer
