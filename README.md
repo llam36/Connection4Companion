@@ -13,10 +13,15 @@ Developed collaboratively at Spring 2023 Bits of Good Developer Bootcamp and ind
 ![MongoDB](https://img.shields.io/badge/MongoDB-a?style=for-the-badge&logo=mongodb&logoColor=white&color=47A248)
 ![Next.js](https://img.shields.io/badge/next.js-nextdotjs?style=for-the-badge&logo=next.js&logoColor=white&color=000000)
 
+## Tool installation
+1. Node.js
+2. Git
+3. Text editor - VSCode recommended
+
 ## Development
 1. Clone this project to your computer
 ```
-git clone https://github.com/llam36/Healing4Heroes.git
+git clone https://github.com/llam36/Connection4Companion.git
 ```
 2. Navigate to project directory in terminal
 3. Install dependencies
