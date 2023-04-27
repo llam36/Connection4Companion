@@ -4,7 +4,7 @@ Connection4Companion🐕‍🦺 is a web application connecting disabled communi
 The app provides training management service allowing registered users to accessibly log their service animal's training progress and capture memorable moments with uploaded videos. Ultimately, Connection4Companion promotes training documentation and fosters companionship between owners and their best service animal friends.
 
 ## 🌲Notice
-Developed collaboratively at Spring 2023 <img src="https://play-lh.googleusercontent.com/hO7716hh7NCcFauJedDclX-R3Zh9JmbSs8AUU6TP2edGVILlZM7gmyt_8WPCZELiPQA" width="17"/> Bits of Good Developer Bootcamp and individually maintained and upgraded.
+Developed collaboratively at Spring 2023 <img src="https://media.licdn.com/dms/image/C560BAQH48YDmA2vrnQ/company-logo_200_200/0/1562726982964?e=2147483647&v=beta&t=eEWlQ8MG9Cif-9vPcDPZLg0nNsQF_JitXetDkK7qjUg" width="17"/> Bits of Good Developer Bootcamp and individually maintained and upgraded.
 
 ## 🌲Tech Stack
 ![CSS](https://img.shields.io/badge/css-a?style=for-the-badge&logo=css3&logoColor=white&color=1572B6)
